@@ -1,2 +1,10 @@
 {% extends 'base.html' %}
-<a href="{% url 'cadastrar_reserva' %}" class="btn btn-success mb-3">Novo Cadastro</a>
+
+{% block center %}
+
+<div class="text-center p-5">
+    <a href="{% url 'cadastrar' %}" class="btn btn-primary mb-3">Novo Cadastro de Reserva</a>
+    <a href="{% url 'cadastrar_s' %}" class="btn btn-primary mb-3">Novo Cadastro de Stand</a>
+</div>
+
+{% endblock %}

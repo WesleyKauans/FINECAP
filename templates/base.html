@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <img src="{% static 'img/logo.png' %}" alt="LOGO" height="90px">
+            <img class="text-center" src="{% static 'img/logo.png' %}" alt="LOGO" height="90px">
         </header>
     
             
@@ -19,7 +19,7 @@
             <ul style="list-style: none;" class="nav-list">
                 <li><a class="nav-link active" href="{% url 'index' %}">Inicio</a></li>
                 <li><a class="nav-link active"  href="{% url 'listar' %}">Reservas</a></li>
-                <li><a class="nav-link active" href="{% url 'cadastrar' %}">Adicionar</a></li>
+                <li><a class="nav-link active" href="{% url 'index' %}">Adicionar</a></li>
             </ul>    
         </nav>
 
@@ -28,7 +28,19 @@
 
         {% endblock  %}
 
+        <footer class="text-center">
+            <div>
+                <P>Instagram:</P>
+                <P>@wesleykauans</P>
+            </div>
+            <div>
+                <P>Email:</P>
+                <P>wesleykauan@gmail.com</P>
+            </div>
+        </footer>
+
                 
     </body>
+ 
 
     </html>

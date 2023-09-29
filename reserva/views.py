@@ -42,3 +42,6 @@ class Editar(views.SuccessMessageMixin, generic.UpdateView):
   template_name = "reserva/forms.html"
   success_url = reverse_lazy("listar")
   success_message = "Reserva atualizada com sucesso! " 
+
+
+ 

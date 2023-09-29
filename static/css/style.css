@@ -20,5 +20,18 @@ nav {
     justify-items: center;
 }
 
+footer {
+    background-color: #e6ccef;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+
+
 
 
