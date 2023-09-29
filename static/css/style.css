@@ -1,0 +1,24 @@
+header {
+    display: grid;
+    align-content: center;
+    background-color: #e6ccef;
+    height: 100px;
+    width: 100%;
+    padding: 0;
+}
+nav {
+    background-color: violet;
+    height: 30px;
+    width: 100%;
+    display: grid;
+
+}
+.nav-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-decoration: none;
+    justify-items: center;
+}
+
+
+
