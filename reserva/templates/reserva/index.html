@@ -1,8 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block center %}
+{% block content %}
+  <div class="p-4 ">
+    <h3>Olá, sejam bem vindos ao RESERVA FINECAP!</h3>
+    <P>Aqui você poderá fazer a sua reserva para divulgar e dar uma maior visibilidade ao seu négocio, seja ele de qualquer 
+      categoria: academia, vendas de roupas, de comidas e mais. A reserva é feita a partir dos stands que estão disponiveis. Além de tudo isso,
+      aqui também é possivel realizar o cadastro de stands.
+    </P>
+    <h6>Navegue pelo site e conheça muito mais!</h6>
+    <hr>
+  </div>
+    <div class="row mt-3 p-4">
+        <div class="col-md-4">
+          <div class="card bg-primary p-2 text-dark bg-opacity-50  mb-3">
+            <div class="card-header">Reservas</div>
+            <div class="card-body">
+              <h5 class="card-title">Total de Reservas</h5>
+              <p class="card-text">{{ total_reservas }}</p> <!-- Substitua pelo valor real -->
+            </div>
+          </div>
+        </div>
+    
+        
+        <div class="col-md-4">
+            <div class="card bg-info p-2 text-dark bg-opacity-50 mb-3">
+            <div class="card-header">Stands</div>
+            <div class="card-body">
+                <h5 class="card-title">Total de Stands</h5>
+                <p class="card-text">{{ total_stands }}</p> <!-- Substitua pelo valor real -->
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
-<div class="text-center p-5">
+<div class="text-center">
     <a href="{% url 'cadastrar' %}" class="btn btn-primary mb-3">Novo Cadastro de Reserva</a>
     <a href="{% url 'cadastrar_s' %}" class="btn btn-primary mb-3">Novo Cadastro de Stand</a>
 </div>

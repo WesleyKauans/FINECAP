@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Reserva
+from .models import Reserva, Stand
 from .form import ReservaForm
 from django.views.generic import ListView,CreateView,DeleteView,DetailView, UpdateView,TemplateView
 from django.views import generic
@@ -9,7 +9,14 @@ from django.contrib.messages import views
 
 class Index(generic.TemplateView):
     template_name = "reserva/index.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total_reservas'] = Reserva.objects.count()
+        context['total_stands'] = Stand.objects.count()
+        return context
     
+class Add(generic.TemplateView):
+    template_name = "reserva/add.html"
     
 class Detalhar(DetailView):
     model = Reserva

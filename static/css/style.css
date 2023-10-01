@@ -1,13 +1,16 @@
+body {
+    background-color: #e8f5ff;
+}
 header {
     display: grid;
     align-content: center;
-    background-color: #e6ccef;
-    height: 100px;
+    background-color:midnightblue;
+    height: 55px;
     width: 100%;
     padding: 0;
 }
 nav {
-    background-color: violet;
+    background-color:#688db9;
     height: 30px;
     width: 100%;
     display: grid;
@@ -21,15 +24,16 @@ nav {
 }
 
 footer {
-    background-color: #e6ccef;
+    background-color: #688db9;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-
+    margin-top: 20px;
 }
+
 
 
 

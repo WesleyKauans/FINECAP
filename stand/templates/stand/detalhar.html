@@ -4,25 +4,23 @@
 {% block center %}
 
 <div class="container text-center">
-    <div class="row">     
-
-      <div class="col m-4 text-center">
-        <br><br><br><br>
-        <p><strong>Localização: </strong>{{reserva.localizacao}}</p>
-        <p><strong>Nome da empresa: </strong>{{reserva.nome_empresa}}</p>
-        <p><strong>Nome da categoria: </strong>{{reserva.categoria_empresa}}</p>
-        <p><strong>Localização: </strong>{{reserva.localizacao}}</p>
-
-
+    <div class="row">
+      
+      <div class="col text-center">
+        <ul class="list-group list-group-flush">
+          <br><br><br><br>       
+          <li class="list-group-item"><p><strong>Localização: </strong>{{stand.localizacao}}</p></li>
+          <li class="list-group-item"><p><strong>Valor: </strong>{{stand.valor}}</p></li>
+        </ul>
         
+
+        <div class="pt-3">
+          <a href="{% url 'listar_s' %}" class="btn btn-secondary">Voltar</a>
+          <a href="{% url 'editar_s' stand.pk %}" class="btn btn-primary">Editar</a>
+          <a href="{% url 'apagar_s' stand.pk %}" class="btn btn-danger">Apagar</a>
+        </div>
         <br><br><br><br><br><br><br><br>
 
-        <a href="{% url 'listar' %}" class="btn btn-secondary">Voltar</a>
-        <a href="{% url 'editar' reserva.pk %}" class="btn btn-primary">Editar</a>
-        <a href="{% url 'apagar' reserva.pk %}" class="btn btn-danger">Apagar</a>
-        
-
-      </div>
 
     </div>
   </div>

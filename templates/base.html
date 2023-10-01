@@ -11,15 +11,15 @@
     </head>
     <body>
         <header>
-            <img class="text-center" src="{% static 'img/logo.png' %}" alt="LOGO" height="90px">
+            <img class="text-center" src="{% static 'img/LOGO-2.png' %}" alt="LOGO" height="45px">
         </header>
     
             
         <nav class="text-center">
             <ul style="list-style: none;" class="nav-list">
-                <li><a class="nav-link active" href="{% url 'index' %}">Inicio</a></li>
-                <li><a class="nav-link active"  href="{% url 'listar' %}">Reservas</a></li>
-                <li><a class="nav-link active" href="{% url 'index' %}">Adicionar</a></li>
+                <li><a class="nav-link active" href="{% url 'index' %}"><strong>Inicio</strong></a></li>
+                <li><a class="nav-link active"  href="{% url 'listar' %}"><strong>Reservas</strong></a></li>
+                <li><a class="nav-link active" href="{% url 'add' %}"><strong>Adicionar</strong></a></li>
             </ul>    
         </nav>
 
@@ -29,13 +29,13 @@
         {% endblock  %}
 
         <footer class="text-center">
-            <div>
-                <P>Instagram:</P>
-                <P>@wesleykauans</P>
+            <div class="pt-3">
+                <P><strong>Instagram:</strong></P>
+                <P>@reservafinecap2023</P>
             </div>
-            <div>
-                <P>Email:</P>
-                <P>wesleykauan@gmail.com</P>
+            <div class="pt-3">
+                <P><strong>Email:</strong></P>
+                <P>reservafinecap2023@gmail.com</P>
             </div>
         </footer>
 

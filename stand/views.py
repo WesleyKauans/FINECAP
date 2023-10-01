@@ -13,6 +13,10 @@ class Listar_S(ListView):
     context_object_name = 'stand'
     paginate_by = 3
 
+class Detalhar_S(DetailView):
+    model = Stand
+    template_name = "stand/detalhar.html"  
+    context_object_name = 'stand'
 
 class Cadastrar_S(views.SuccessMessageMixin, generic.CreateView):
   model = Stand
