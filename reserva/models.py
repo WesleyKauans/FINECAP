@@ -2,7 +2,11 @@ from django.db import models
 
 class Stand (models.Model):
     localizacao = models.CharField(max_length=300)
-    valor = models.FloatField()
+    valor = models.DecimalField(
+        verbose_name=("valor"),
+        decimal_places=2,
+        max_digits=6
+    )
 
     def __str__(self):
         return self.localizacao
