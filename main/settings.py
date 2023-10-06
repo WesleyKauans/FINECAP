@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "reserva",
     "stand",
+    'users',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +54,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
+
 ]
 
 ROOT_URLCONF = "main.urls"
@@ -65,6 +71,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                'django.template.context_processors.request',
+
             ],
         },
     },
@@ -72,6 +80,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "main.wsgi.application"
 
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+AUTH_USER_MODEL = "users.User"
+LOGIN_REDIRECT_URL = "index"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
