@@ -1,11 +1,8 @@
-body {
-    background-color: #e8f5ff;
-}
 header {
     display: grid;
     align-content: center;
     background-color:midnightblue;
-    height: 55px;
+    height: 65px;
     width: 100%;
     padding: 0;
 }
@@ -18,7 +15,7 @@ nav {
 }
 .nav-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     text-decoration: none;
     justify-items: center;
 }
@@ -33,6 +30,12 @@ footer {
     width: 100%;
     margin-top: 20px;
 }
+.icon {
+    border: none;
+    padding: none;
+}
+
+
 
 
 

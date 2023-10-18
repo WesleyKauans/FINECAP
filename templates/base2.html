@@ -23,17 +23,8 @@
                     <li><a class="nav-link active" href="{% url 'index' %}"><strong>Inicio</strong></a></li>
                     <li><a class="nav-link active"  href="{% url 'listar' %}"><strong>Reservas</strong></a></li>
                     <li><a class="nav-link active" href="{% url 'add' %}"><strong>Adicionar</strong></a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Entrar            
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                          <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
-                          <li><a class="dropdown-item" href="{% url 'account_reset_password' %}">Cadastrar</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logount</a></li>
-                        </ul>
-                    </li>
+                    <li><a class="nav-link active btn-primary" href="{% url 'account_logout' %}"><strong>Logout</strong></a></li>
+
                 </ul>    
             </div>
             

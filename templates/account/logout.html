@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block center %}
+<html>
+<head>
+    <title>Logout</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <!-- 1 of 3 -->
+          </div>
+          <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+            {% endif %}
+          </form>
+          <div class="col-6 mb-3">
+            <h1 class="text-center pt-4">Logout Bem-Sucedido</h1>
+            <p>Você foi desconectado com sucesso.</p>
+            <p><a href="{% url 'account_login' %}">Faça o login novamente</a></p>
+        </div>
+        <div class="col">
+          <!-- 3 of 3 -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!-- 1 of 3 -->
+        </div>
+        <div class="col-5">
+          <!-- 2 of 3 (wider) -->
+        </div>
+        <div class="col">
+          <!-- 3 of 3 -->
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}
