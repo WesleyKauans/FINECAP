@@ -16,5 +16,5 @@ class Reserva (models.Model):
     nome_empresa = models.CharField(max_length=200)
     categoria_empresa = models.CharField(max_length=250)
     quitado = models.BooleanField()
-    localizacao = models.ForeignKey(Stand, on_delete=models.CASCADE,  related_name='reservas_localizacao')
+    localizacao = models.ForeignKey(Stand, on_delete=models.CASCADE, related_name='reservas_localizacao')
 

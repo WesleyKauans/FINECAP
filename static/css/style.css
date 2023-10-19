@@ -1,10 +1,17 @@
 header {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+    justify-items: center;
     align-content: center;
     background-color:midnightblue;
     height: 65px;
     width: 100%;
     padding: 0;
+}
+
+.entrar {
+    width: 70px;
 }
 nav {
     background-color:#688db9;
@@ -15,9 +22,14 @@ nav {
 }
 .nav-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     text-decoration: none;
     justify-items: center;
+}
+
+a:hover {
+    color: white;
+    opacity: 40%;
 }
 
 footer {
@@ -34,6 +46,23 @@ footer {
     border: none;
     padding: none;
 }
+
+.dropdown a {
+    display: block;
+}
+
+.dropdown {
+    position: absolute;
+    display: none;
+}
+
+.botão {
+    color: white;
+}
+.botão-2 {
+    color: black;
+}
+
 
 
 

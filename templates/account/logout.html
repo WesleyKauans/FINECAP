@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 {% load i18n %}
 
 {% block center %}
@@ -6,40 +6,27 @@
 <head>
     <title>Logout</title>
 </head>
-<body>
     <div class="container">
         <div class="row">
           <div class="col">
-            <!-- 1 of 3 -->
+            <!-- 1 of 3 --> 
           </div>
-          <form method="post" action="{% url 'account_logout' %}">
-            {% csrf_token %}
-            {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-            {% endif %}
-          </form>
-          <div class="col-6 mb-3">
-            <h1 class="text-center pt-4">Logout Bem-Sucedido</h1>
-            <p>Você foi desconectado com sucesso.</p>
-            <p><a href="{% url 'account_login' %}">Faça o login novamente</a></p>
+          <div class="col-12 mb-3">
+            <h4 class="text-center pt-4">Você deseja desconectar-se?</h4>
+            <form class="text-center pt-4" method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+              {% endif %}
+              <button class="botão btn btn-primary" type="submit">{% trans 'Logout' %}</button>
+              <a class="btn btn-secondary" href="{% url 'index2' %}">{% trans 'Voltar' %}</a>
+
+            </form>   
+          </div>
+
+      
         </div>
-        <div class="col">
-          <!-- 3 of 3 -->
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <!-- 1 of 3 -->
-        </div>
-        <div class="col-5">
-          <!-- 2 of 3 (wider) -->
-        </div>
-        <div class="col">
-          <!-- 3 of 3 -->
-        </div>
-      </div>
     </div>
-</body>
 </html>
 
 {% endblock %}

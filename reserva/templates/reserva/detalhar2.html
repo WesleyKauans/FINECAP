@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 {% load static %}
 
 {% block center %}
@@ -18,7 +18,8 @@
 
         <div class="pt-3">
           <a href="{% url 'listar' %}" class="btn btn-secondary">Voltar</a>
-        </div>
+          <a href="{% url 'editar' reserva.pk %}" class="btn btn-primary">Editar</a>
+          <a href="{% url 'apagar' reserva.pk %}" class="btn btn-danger">Apagar</a>        </div>
         <br><br><br><br><br><br><br><br>
 
 

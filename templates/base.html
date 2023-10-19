@@ -13,7 +13,9 @@
     <body>
         <header>
             <img class="text-center" src="{% static 'img/LOGO-2.png' %}" alt="LOGO" height="45px">
-
+            <div class="entrar">
+                <button type="button" class="btn btn-info"><a class="nav-link active entrar" href="{% url 'account_login' %}"><strong>Entrar</strong></a></button>
+            </div>
         </header>
     
             
@@ -23,8 +25,9 @@
                     <li><a class="nav-link active" href="{% url 'index' %}"><strong>Inicio</strong></a></li>
                     <li><a class="nav-link active"  href="{% url 'listar' %}"><strong>Reservas</strong></a></li>
                     <li><a class="nav-link active" href="{% url 'add' %}"><strong>Adicionar</strong></a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    <!-- <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'account_login' %}" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Entrar            
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
@@ -33,7 +36,7 @@
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logount</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>    
             </div>
             

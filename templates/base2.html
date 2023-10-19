@@ -13,17 +13,18 @@
     <body>
         <header>
             <img class="text-center" src="{% static 'img/LOGO-2.png' %}" alt="LOGO" height="45px">
-
+            <div class="entrar">
+                <button type="button" class="btn btn-info"><a class="nav-link active entrar" href="{% url 'account_logout' %}"><strong>Logout</strong></a></button>
+            </div>
         </header>
     
             
         <nav class="text-center">
             <div class="container-fluid">
                 <ul style="list-style: none;" class="nav-list">
-                    <li><a class="nav-link active" href="{% url 'index' %}"><strong>Inicio</strong></a></li>
-                    <li><a class="nav-link active"  href="{% url 'listar' %}"><strong>Reservas</strong></a></li>
+                    <li><a class="nav-link active" href="{% url 'index2' %}"><strong>Inicio</strong></a></li>
+                    <li><a class="nav-link active"  href="{% url 'listar2' %}"><strong>Reservas</strong></a></li>
                     <li><a class="nav-link active" href="{% url 'add' %}"><strong>Adicionar</strong></a></li>
-                    <li><a class="nav-link active btn-primary" href="{% url 'account_logout' %}"><strong>Logout</strong></a></li>
 
                 </ul>    
             </div>
