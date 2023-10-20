@@ -89,6 +89,8 @@ AUTHENTICATION_BACKENDS = [
 
 AUTH_USER_MODEL = "users.User"
 LOGIN_REDIRECT_URL = "index2"
+LOGOUT_REDIRECT_URL = "index"
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

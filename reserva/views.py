@@ -6,6 +6,8 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.messages import views
+from users.permissions import GerentePermission
+
 
 
 class Index(generic.TemplateView):
@@ -27,8 +29,10 @@ class Index2(generic.TemplateView):
 class Add(LoginRequiredMixin, generic.TemplateView):
     template_name = "reserva/add.html"
 
+class Logout(generic.TemplateView):
+    template_name = "account/confrm_logout.html"
     
-class Detalhar(generic.DetailView):
+class Detalhar(LoginRequiredMixin, generic.DetailView):
     model = Reserva
     template_name = "reserva/detalhar.html"  
     context_object_name = 'reserva'
@@ -57,13 +61,13 @@ class Cadastrar(LoginRequiredMixin,views.SuccessMessageMixin, generic.CreateView
   success_url = reverse_lazy("listar")
   success_message = "Reserva cadastrada com sucesso!"
   
-class Deletar(LoginRequiredMixin,views.SuccessMessageMixin, generic.DeleteView):
+class Deletar(GerentePermission, LoginRequiredMixin,views.SuccessMessageMixin, generic.DeleteView):
   model = Reserva
   template_name = "reserva/deletar.html"
   success_url = reverse_lazy("listar")
   success_message = "Reserva removida com sucesso!"
   
-class Editar(LoginRequiredMixin,views.SuccessMessageMixin, generic.UpdateView):
+class Editar(GerentePermission, LoginRequiredMixin,views.SuccessMessageMixin, generic.UpdateView):
   model = Reserva
   form_class = ReservaForm
   template_name = "reserva/forms.html"

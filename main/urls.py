@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from reserva.views import Cadastrar, Deletar, Listar, Editar,  Index ,Detalhar, Add, Index2, Detalhar2, Listar2
+from reserva.views import Cadastrar, Deletar, Listar, Editar,  Index ,Detalhar, Add, Index2, Detalhar2, Listar2, Logout
 from stand.views import Cadastrar_S, Deletar_S, Listar_S, Editar_S, Detalhar_S, Detalhar_S2, Listar_S2
 from django.conf.urls.static import static
 from django.conf import settings
@@ -13,6 +13,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Index.as_view(),name='index'),
     path('i', Index2.as_view(),name='index2'),
+    path('logout', Logout.as_view(),name='logout'),
     path('add', Add.as_view(),name='add'),
 
 

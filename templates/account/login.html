@@ -13,109 +13,37 @@
 
 {% block center %}
 
-<div class="container">
-  <div class="row">
-    <div class="col">
+<div class="container mt-2">
+  <div class="row justify-content-center">
+    <div class="col-md-0">
       <!-- 1 of 3 -->
     </div>
-    <div class="col-6 mb-3">
+    <div class="col-5 mb-3">
       <h1 class="text-center pt-4">Login</h1>
-      <hr>
       <form class="login" method="POST" action="{% url 'account_login' %}">
 
         {% csrf_token %}
 
-        <div class="form-group">
-          <label for="id_login" class="text-center"></label>
-          <input type="text" name="{{ form.login.name }}" class="form-control form-control-lg" id="{{ form.login.id }}" placeholder="{% translate "Enter your username" %}">
+        <div class="mb-2">
+          <label for="id_login" class="text-center pt-4">Nome do Usuário</label>
+          <input type="text" name="{{ form.login.name }}" class="form-control form-control-lg" id="{{ form.login.id }}" placeholder="{% translate "Insira seu user" %}">
         </div>
-
-        <!-- <div class = "mb-3">
-          <label for="id_login" class="form-label">{% translate "Username:" %}</label>
-          {{ form.login }}
+        <div class="mb-2">
+          <label for="id_password" class="text-center pt-4">Senha</label>
+          <input type="password" name="{{ form.password.name }}" class="form-control form-control-lg" id="{{ form.password.id }}" placeholder="{% translate "Insira sua senha" %}">
         </div>
-        <div class = "mb-3">
-          <label for="id_password" class="form-label">{% translate "Senha:" %}</label>
-          {{ form.password }}
+        <div class="text-center">
+          <button class="btn btn-primary btn-lg mt-2"  type="submit">{% translate "Sign In" %}</button>
         </div>
-        {% if redirect_field_value %}
-        <input type="text" name="{{ form.login }}" value="{{ form.login }}" />
-        {% endif %} -->
-        <button class="primaryAction br-button primary block" type="submit">{% translate "Sign In" %}</button>
-        <div class="forgot-password">
+        <span class="br-divider my-3"></span>
+        <p class="first-access-href text-center mt-3">
+          <a style="text-decoration-line: none" href="{% url 'account_signup' %}">{% translate "Primeiro Acesso? Registre-se" %}</a>
+        </p>
+        <div class="forgot-password text-center ">
           <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% translate "Esqueceu a senha?" %}</a>
         </div>
       </form>
       <span class="br-divider my-3"></span>
-      <p class="first-access-href">
-        <a style="text-decoration-line: none" href="{% url 'account_reset_password' %}">{% translate "Primeiro Acesso?" %}</a>
-      </p>
-      <!-- <div class="main-content pl-sm-3 mt-4" id="main-content">
-        <div class="row justify-content-between align-items-center">
-          <div class="div-system-access col-md-5 col-lg-5 col-xl-5 col-12">
-            <h1 class="text-h1">{% translate "Acesso ao Sistema" %}</h1>
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-              {% csrf_token %}
-              <div class = "mb-3"> 
-                <label class="form-label" for="id_login"> {% translate "Username:" %}</label>
-                <div class="input-group">
-                  <div class="input-icon">
-                    <i class="fas fa-user" aria-hidden="true"></i>
-                  </div>
-                  {{ form.login }}
-                  <p>{% translate "Digite seu nome de usuário." %}</p>
-                </div>
-              </div>
-              <div class = "mb-3"> 
-                <label class="form-label" for="id_password">{% translate "Senha:" %}</label>
-                <div class="input-group">
-                  <div class="input-icon">
-                    {% comment %} <i class="fas fa-user" aria-hidden="true"></i> {% endcomment %}
-                  </div>
-                  {{ form.password }}
-                  <button class="br-button" type="button" aria-label="Mostrar senha">
-                    <i class="fas fa-eye" aria-hidden="true"></i>
-                  </button>
-                  <p>{% translate "Digite sua senha de segurança." %}</p>
-                </div>
-              </div>
-              {% if redirect_field_value %}
-              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-              {% endif %}
-              <div class="forgot-password">
-                <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% translate "Esqueceu a senha?" %}</a>
-              </div>
-              <div class="mb-1">
-                <div class="br-checkbox">
-                  <input id="keep_connected_checkbox" name="keep_connected_checkbox" type="checkbox"
-                    aria-label="Manter-me conectado" />
-                  <label for="keep_connected_checkbox">{% translate "Manter-me conectado" %}</label>
-                </div>
-              </div>
-              <button class="primaryAction br-button primary block" type="submit">{% translate "Sign In" %}</button>
-            </form>
-            <span class="br-divider my-3"></span>
-            <p class="first-access-href">
-              <a style="text-decoration-line: none" href="{% url 'account_reset_password' %}">{% translate "Primeiro Acesso?" %}</a>
-            </p>
-          </div>
-        </div>
-      </div> -->
-      
-    </div>
-    <div class="col">
-      <!-- 3 of 3 -->
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <!-- 1 of 3 -->
-    </div>
-    <div class="col-5">
-      <!-- 2 of 3 (wider) -->
-    </div>
-    <div class="col">
-      <!-- 3 of 3 -->
     </div>
   </div>
 </div>

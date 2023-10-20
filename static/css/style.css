@@ -1,9 +1,9 @@
 header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-content: space-around;
-    justify-items: center;
     align-content: center;
+    justify-content: center;
+    justify-items: center;
     background-color:midnightblue;
     height: 65px;
     width: 100%;
@@ -28,8 +28,9 @@ nav {
 }
 
 a:hover {
-    color: white;
-    opacity: 40%;
+    color: black;
+    opacity: 100%;
+
 }
 
 footer {

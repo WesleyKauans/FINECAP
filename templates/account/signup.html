@@ -5,65 +5,44 @@
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block center %}
-<h1>{% trans "Sign Up" %}</h1>
+<h1 class="text-center pt-4">Cadastre-se!</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<p class="text-center">{% blocktrans %}Você já está cadastrado? <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<section class="form container">
+  <div class="row justify-content-center">
+    <div class="col-md-7 col-lg-7 col-12">
+      <form class="signup rounded" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  <section class="form container-fluid p-5x">
-    <div class="row">
-      <div class="col-md-7 col-lg-7 col-12">
-      <div class="br-input">
-        <label for="id_login">{% translate "Username:" %}</label>
-        <div class="input-group">
-          <div class="input-icon">
-            <i class="fas fa-user" aria-hidden="true"></i>
-          </div>
-          {{ form.username }}
-          <p>{% translate "Digite seu nome de usuário." %}</p>
+        <div class="mb-2">
+          <label for="id_login" class="text-center pt-2">Nome do Usuário</label>
+          <input type="text" name="{{ form.username.name }}" class="form-control form-control-lg" id="{{ form.username.id }}">
         </div>
-      </div>
-      <div class="br-input">
-        <label for="id_login">{% translate "Email:" %}</label>
-        <div class="input-group">
-          <div class="input-icon">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-          </div>
-          {{ form.email }}
-          <p>{% translate "Digite seu email (opcional)." %}</p>
+
+        <div class= "mb-2">
+          <label for="id_login" class="text-center pt-2">Email</label>
+          <input type="email" name="{{ form.email.name }}" class="form-control form-control-lg" id="{{ form.email.id }}">
+          <p>{% translate "* Digite seu email (opcional)." %}</p>
         </div>
-      </div>
-      <div class="br-input input-button">
-        <label for="id_password">{% translate "Senha:" %}</label>
-        <div class="input-group">
-          <div class="input-icon">
-          </div>
-          {{ form.password1 }}
-          <button class="br-button" type="button" aria-label="Mostrar senha">
-            <i class="fas fa-eye" aria-hidden="true"></i>
-          </button>
+
+        <div class= "mb-2">
+          <label for="id_password" class="text-center pt-2">Senha</label>
+          <input type="password" name="{{ form.password1.name }}" class="form-control form-control-lg" id="{{ form.password1.id }}">
+        </div>  
+
+        <div class="mb-2">
+          <label for="id_password" class="text-center pt-2">Confirme sua senha</label>
+          <input type="password" name="{{ form.password2.name }}" class="form-control form-control-lg" id="{{ form.password2.id }}">
         </div>
-      </div>
-      <div class="br-input input-button">
-        <label for="id_password">{% translate "Confirmar Senha:" %}</label>
-        <div class="input-group">
-          <div class="input-icon">
-          </div>
-          {{ form.password2 }}
-          <button class="br-button" type="button" aria-label="Mostrar senha">
-            <i class="fas fa-eye" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
-      
-      {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-      {% endif %}
-      <button class="mt-3 primaryAction br-button primary block" type="submit">{% translate "Sign Up" %}</button>
-      </div>
+        
+        {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="mt-3  btn btn-primary" type="submit">{% translate "Sign Up" %}</button>
+      </form>
+
     </div>
+  </div>
 </section>
-</form>
 
 {% endblock center %}

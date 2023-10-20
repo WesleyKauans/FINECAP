@@ -15,7 +15,8 @@
           <div class="col-6 mb-3">
             <h1 class="text-center pt-4">Logout bem-bucedido</h1>
             <p color="gren">Você foi desconectado com sucesso.</p>
-            <p><a href="{% url 'account_login' %}">Faça o login novamente</a></p>
+            <a class="btn btn-primary" href="{% url 'account_login' %}">Faça o login novamente</a>
+            <a class="btn btn-secondary" href="{% url 'index' %}">Ir para página inicial</a>
         </div>
         <div class="col">
           <!-- 3 of 3 -->
